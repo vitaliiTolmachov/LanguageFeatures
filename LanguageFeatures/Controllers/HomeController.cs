@@ -21,7 +21,7 @@ namespace LanguageFeatures.Controllers
         public ViewResult GetProductCategory() {
             var product = new Product {
                 Name = "Kayak",
-                ProductID = 100,
+                ProductId = 100,
                 Category = "Watersports",
                 Description = "A boat for one person",
                 Price = 275m
