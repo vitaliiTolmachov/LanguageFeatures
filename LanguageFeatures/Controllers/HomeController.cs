@@ -12,8 +12,15 @@ namespace LanguageFeatures.Controllers
 	public class HomeController : Controller
 	{
 		// GET: Home
-		public string Index() {
-			return "Navigate to URL to show an example";
+		public ActionResult Index() {
+			var product = new Product {
+				Name = "Kayak",
+				ProductId = 100,
+				Category = "Watersports",
+				Description = "A boat for one person",
+				Price = 275m
+			};
+			return View(product);
 		}
 		public ViewResult AutoPropertyViewResult() {
 			var product = new Product();
