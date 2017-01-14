@@ -20,7 +20,21 @@ namespace LanguageFeatures.Controllers
 				Description = "A boat for one person",
 				Price = 275m
 			};
+			ViewBag.Count = 1;
+			ViewBag.Supplier = null;
+			ViewBag.isExpressShip = true;
+			ViewBag.isDiscount = false;
 			return View(product);
+		}
+		public ActionResult GetArray() {
+			Product[] arr =
+			{
+				new Product {Name = "Kayak", Price = 275m, Category = "Watersports"},
+				new Product {Name = "LifeJacket", Price = 48.49m, Category = "Watersports"},
+				new Product {Name = "Soccer ball", Price = 19.50m, Category = "Soccer"},
+				new Product {Name = "Corner flag", Price = 18m, Category = "Soccer"}
+			};
+			return View(arr);
 		}
 		public ViewResult AutoPropertyViewResult() {
 			var product = new Product();

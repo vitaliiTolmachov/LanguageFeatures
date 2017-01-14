@@ -11,7 +11,7 @@ namespace LanguageFeatures.Models
         private string _name;
         public string Name
         {
-            get { return this.ProductId + _name; }
+            get { return _name; }
             set { _name = value; }
         }
 

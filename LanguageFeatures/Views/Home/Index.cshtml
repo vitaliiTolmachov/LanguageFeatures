@@ -1,20 +1,46 @@
-﻿@model LanguageFeatures.Models.Product
+﻿@using System.Linq.Expressions
+@model LanguageFeatures.Models.Product
 
 @{
-    //Layout = "../_BasicLayout.cshtml";
+
     ViewBag.Title = "Product info";
 }
 
 <!DOCTYPE html>
-
+<meta name="viewport" content="width=device-width" />
+<title>@ViewBag.Title</title>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-</head>
 <body>
-    <div>
-        @Model.Name
+    <table>
+        <thead>
+            <tr><th>Property</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Name</td><td>@Model.Name</td></tr>
+            <tr><td>Price</td><td>@Model.Price</td></tr>
+            <tr><td>Category</td><td>@Model.Category</td></tr>
+            <tr><td>Description</td><td>@Model.Description</td></tr>
+            <tr>
+                <td>Stocl Level</td>
+                <td>
+                    @switch ((int)@ViewBag.Count) {
+                        case 0:
+                            @:Out of stock
+            break;
+                        case 1:
+                            <b style="color: brown">Low stok: @ViewBag.Count</b>break;
+                        default:
+                            @ViewBag.Count  break;
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div data-discount="@ViewBag.isDiscount" data-experss="@ViewBag.isExpressShip" data-supplier="@ViewBag.Supplier" data-stock="@ViewBag.Count">
+        The containing product has attributes
     </div>
+    Discount: <input type="checkbox" checked="@ViewBag.isDiscount" />
+    Express: <input type="checkbox" checked="@ViewBag.isExpressShip" />
+    Supplier: <input type="checkbox" checked="@ViewBag.Supplier" />
 </body>
 </html>

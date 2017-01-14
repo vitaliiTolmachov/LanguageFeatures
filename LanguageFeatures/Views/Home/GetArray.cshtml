@@ -1,0 +1,33 @@
+﻿@using LanguageFeatures.Models
+@model LanguageFeatures.Models.Product[]
+@{
+    ViewBag.Title = "Product info";
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        @if (@Model.Length > 0) {
+            <table>
+                <thead><tr><td>Product</td><td>Price</td></tr></thead>
+                @foreach (Product product in @Model)
+                {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                </tr>
+                }
+            </table>
+        } else {
+            <h2>Sorry, no products</h2>
+        }
+    </div>
+</body>
+</html>
