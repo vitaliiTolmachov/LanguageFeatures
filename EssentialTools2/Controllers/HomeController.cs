@@ -10,6 +10,12 @@ namespace EssentialTools2.Controllers
 {
 	public class HomeController : Controller
 	{
+		private IValueCalculator calc;
+
+		public HomeController(IValueCalculator calcParam)
+		{
+			this.calc = calcParam;
+		}
 		private Product[] products = new Product[]
 		{
 			new Product {Name = "Kayak", Price = 275m, Category = "Watersports"},
@@ -21,9 +27,6 @@ namespace EssentialTools2.Controllers
 		// GET: Home
 		public ActionResult Index()
 		{
-			IKernel ninjectKernel = new StandardKernel();
-			ninjectKernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
-			var calc = ninjectKernel.Get<IValueCalculator>();
 			var shoppingCart = new ShoppingCart(calc)
 			{
 				Products = products
