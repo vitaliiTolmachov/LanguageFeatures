@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageFeatures", "Languag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EssentialTools2", "EssentialTools2\EssentialTools2.csproj", "{5C0945A6-30F6-46C0-A83C-5B2406B9039B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EssentialToolsUnitTest", "EssentialToolsUnitTest\EssentialToolsUnitTest.csproj", "{87D42A37-A39D-4261-815F-A10D8A1CAD78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5C0945A6-30F6-46C0-A83C-5B2406B9039B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C0945A6-30F6-46C0-A83C-5B2406B9039B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C0945A6-30F6-46C0-A83C-5B2406B9039B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87D42A37-A39D-4261-815F-A10D8A1CAD78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87D42A37-A39D-4261-815F-A10D8A1CAD78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87D42A37-A39D-4261-815F-A10D8A1CAD78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87D42A37-A39D-4261-815F-A10D8A1CAD78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
