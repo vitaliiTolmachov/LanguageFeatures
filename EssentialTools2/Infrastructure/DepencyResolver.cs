@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Ninject;
+using Ninject.Web.Common;
 
 namespace EssentialTools2.Models.Depencies
 {
@@ -16,8 +17,10 @@ namespace EssentialTools2.Models.Depencies
 			this.AddBindings();
 		}
 
-		private void AddBindings() {
-			kernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
+		private void AddBindings()
+		{
+			//Всегда 1 обьект на запрос (оптимально)
+			kernel.Bind<IValueCalculator>().To<LinqValueCalculator>().InRequestScope();
 			//kernel.Bind<IDiscountHelper>().To<DefaultDiscounter>().WithPropertyValue("DiscountSize", (object) 50m);
 			kernel.Bind<IDiscountHelper>().To<DefaultDiscounter>().WithConstructorArgument("discountParam", (object)50m);
 			//Использует более узкое условие привязки эсли это возможно
