@@ -20,6 +20,8 @@ namespace EssentialTools2.Models.Depencies
 			kernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
 			//kernel.Bind<IDiscountHelper>().To<DefaultDiscounter>().WithPropertyValue("DiscountSize", (object) 50m);
 			kernel.Bind<IDiscountHelper>().To<DefaultDiscounter>().WithConstructorArgument("discountParam", (object)50m);
+			//Использует более узкое условие привязки эсли это возможно
+			kernel.Bind<IDiscountHelper>().To<FlexibleDiscounHelper>().WhenInjectedInto<LinqValueCalculator>();
 		}
 
 		public object GetService(Type serviceType) {

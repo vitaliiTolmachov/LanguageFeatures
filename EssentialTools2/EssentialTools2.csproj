@@ -117,6 +117,7 @@
     </Compile>
     <Compile Include="Infrastructure\DepencyResolver.cs" />
     <Compile Include="Models\DefaultDiscounter.cs" />
+    <Compile Include="Models\FlexibleDiscounHelper.cs" />
     <Compile Include="Models\IValueCalculator.cs" />
     <Compile Include="Models\LinqValueCalculator.cs" />
     <Compile Include="Models\Product.cs" />
